@@ -1,0 +1,35 @@
+# 🚀 [shell]
+shell-integration = zsh
+
+# 🖥️ [windows]
+macos-titlebar-style = hidden
+window-height = 40
+window-width = 135
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+confirm-close-surface = false
+window-step-resize = false
+mouse-hide-while-typing = true
+window-decoration = true
+macos-option-as-alt = true
+
+# 🎨 [background]
+theme = Gruvbox Dark
+# background-opacity = 0.92
+resize-overlay = always
+background-blur-radius = 12
+unfocused-split-opacity = 0.55
+split-divider-color = #66cccc
+
+# 📇 [fonts]
+font-family = "Cascadia Code NF"
+font-feature = -liga
+font-size = 14
+
+# 👾 [quick terminal]
+quick-terminal-position = center
+quick-terminal-autohide = false
+quick-terminal-screen = main
+quick-terminal-space-behavior = remain
+

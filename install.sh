@@ -20,7 +20,7 @@ brew bundle --file="$DOTFILES/Brewfile"
 
 # 3. Symlinks de configuración (respalda lo que hubiera)
 mkdir -p "$HOME/.config"
-for c in aerospace sketchybar borders yazi starship.toml; do
+for c in aerospace sketchybar borders yazi starship.toml ghostty; do
   target="$HOME/.config/$c"
   if [ -e "$target" ] && [ ! -L "$target" ]; then
     mv "$target" "$target.bak.$(date +%Y%m%d-%H%M%S)"

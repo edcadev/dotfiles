@@ -24,3 +24,7 @@ brew "yazi"                          # gestor de archivos (función y)
 # Git
 brew "lazygit"
 brew "git-delta"                     # pager de git (lo configura install.sh)
+
+# Terminal
+cask "ghostty"                       # config en config/ghostty
+cask "font-cascadia-code-nf"         # fuente de Ghostty

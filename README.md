@@ -22,6 +22,7 @@ Luego: dar permiso de Accesibilidad a AeroSpace y ejecutar `gh auth login`.
 | `config/borders/bordersrc`        | `~/.config/borders`          |
 | `config/yazi/`                    | `~/.config/yazi`             |
 | `config/starship.toml`            | `~/.config/starship.toml`    |
+| `config/ghostty/`                 | `~/.config/ghostty`          |
 | `zsh/shell.zsh`                   | al inicio de `~/.zshrc`      |
 | `zsh/sketchybar.zsh`              | cargado desde `~/.zshrc`     |
 | `Brewfile`                        | dependencias (`brew bundle`) |
