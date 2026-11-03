@@ -60,4 +60,7 @@ Replica la integración zsh de [Kaku](https://github.com/tw93/Kaku) sin depender
 
 ## Notas
 
+- Esquema de color: **Catppuccin Macchiato** en todo (SketchyBar, Borders, Ghostty, Starship, yazi, delta).
+  `config/sketchybar/colors.sh` es la paleta base; `bordersrc` la carga directamente.
+
 - macOS 27: `MenuBarAgent` capta clics en la franja superior, por eso SketchyBar usa `topmost=on` + `alt-m`.

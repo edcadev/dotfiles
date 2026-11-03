@@ -42,6 +42,7 @@ grep -qxF "$line" "$HOME/.zshrc" 2>/dev/null || echo "$line" >> "$HOME/.zshrc"
 git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
+git config --global delta.syntax-theme 'Catppuccin Macchiato'
 git config --global merge.conflictStyle zdiff3
 
 # 5. Ocultar barra de menús de macOS (SketchyBar la sustituye; alt-m la deja ver)

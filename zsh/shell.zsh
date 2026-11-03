@@ -99,7 +99,7 @@ _fsh_defer() {
     local f="$BREW_PREFIX/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
     [[ -f "$f" ]] || return
     source "$f"
-    FAST_HIGHLIGHT_STYLES[comment]='fg=249'      # default fg=8 es ilegible en fondo oscuro
+    FAST_HIGHLIGHT_STYLES[comment]='fg=#8087a2'  # overlay1 Macchiato; default fg=8 es ilegible
     FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=magenta'
 }
 precmd_functions+=(_fsh_defer)

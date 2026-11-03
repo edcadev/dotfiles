@@ -15,12 +15,12 @@ window-decoration = true
 macos-option-as-alt = true
 
 # 🎨 [background]
-theme = Gruvbox Dark
+theme = Catppuccin Macchiato
 # background-opacity = 0.92
 resize-overlay = always
 background-blur-radius = 12
 unfocused-split-opacity = 0.55
-split-divider-color = #66cccc
+split-divider-color = #8bd5ca
 
 # 📇 [fonts]
 font-family = "Cascadia Code NF"

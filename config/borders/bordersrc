@@ -1,4 +1,5 @@
 #!/bin/bash
-# Valores del yabairc de Felix: border 2, radio 11, activo 0xffe1e3e4, inactivo 0xff2a2f38.
-# window_state.sh (sketchybar) cambia active_color según layout.
-borders style=round width=2.0 hidpi=off active_color=0xffe1e3e4 inactive_color=0xff2a2f38
+# Colores de la paleta Catppuccin Macchiato de SketchyBar (única fuente: colors.sh).
+# activo = text, inactivo = surface0. window_state.sh (sketchybar) cambia active_color según layout.
+source "$HOME/.config/sketchybar/colors.sh"
+borders style=round width=2.0 hidpi=off active_color=$WHITE inactive_color=0xff363a4f

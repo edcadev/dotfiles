@@ -21,7 +21,7 @@ window_state() {
 
   # Borde: blanco en tiles (como el original), color del estado en el resto
   BORDER=$COLOR
-  [ "$ICON" = "$YABAI_GRID" ] && BORDER=0xffe1e3e4
+  [ "$ICON" = "$YABAI_GRID" ] && BORDER=$WHITE
   borders active_color=$BORDER > /dev/null 2>&1 &
 
   sketchybar --set $NAME icon=$ICON icon.color=$COLOR
