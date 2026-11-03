@@ -1,5 +1,5 @@
 #!/bin/bash
-# Restaura AeroSpace + SketchyBar + Borders en una Mac nueva.
+# Restaura AeroSpace + SketchyBar + Borders + shell (zsh, starship, yazi) + Ghostty en una Mac nueva.
 # Uso: git clone <repo> ~/dotfiles && ~/dotfiles/install.sh
 set -euo pipefail
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
@@ -28,7 +28,13 @@ for c in aerospace sketchybar borders; do
   ln -sfn "$DOTFILES/config/$c" "$target"
 done
 
-# 4. Funciones zsh (brew → actualiza contador, zen)
+# 4a. Shell base: debe ir al INICIO de ~/.zshrc (hace compinit)
+line='[ -f ~/dotfiles/zsh/shell.zsh ] && source ~/dotfiles/zsh/shell.zsh'
+if ! grep -qxF "$line" "$HOME/.zshrc" 2>/dev/null; then
+  { echo "$line"; cat "$HOME/.zshrc" 2>/dev/null; } > "$HOME/.zshrc.tmp" && mv "$HOME/.zshrc.tmp" "$HOME/.zshrc"
+fi
+
+# 4b. Funciones zsh (brew → actualiza contador, zen)
 line="[ -f ~/dotfiles/zsh/sketchybar.zsh ] && source ~/dotfiles/zsh/sketchybar.zsh"
 grep -qxF "$line" "$HOME/.zshrc" 2>/dev/null || echo "$line" >> "$HOME/.zshrc"
 

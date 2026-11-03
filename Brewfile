@@ -11,3 +11,11 @@ brew "switchaudio-osx"   # selector de salida de audio (clic derecho en volumen)
 
 cask "font-sf-pro"               # fuente de la barra + SF Symbols
 cask "font-sketchybar-app-font"  # iconos de apps en los workspaces
+
+# Shell (zsh/shell.zsh) — antes lo instalaba Kaku
+brew "starship"                      # prompt
+brew "eza"                           # ls con iconos (alias en shell.zsh)
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-fast-syntax-highlighting"
+brew "neovim"                        # editor de zconfig/gconfig (config nvim fuera del repo)
