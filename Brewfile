@@ -19,3 +19,4 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-fast-syntax-highlighting"
 brew "neovim"                        # editor de zconfig/gconfig (config nvim fuera del repo)
+brew "yazi"                          # gestor de archivos (función y)
