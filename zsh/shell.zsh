@@ -41,7 +41,12 @@ bindkey '^?' backward-delete-char '^H' backward-delete-char '^[[3~' delete-char
 _eza='eza --group-directories-first --icons --color=auto'
 alias ls="$_eza" ll="$_eza -l" la="$_eza -la" lt2="$_eza --tree --level=2" lt3="$_eza --tree --level=3"
 unset _eza
-cd() { builtin cd "$@" && eza --icons=always --color=always --group-directories-first; }   # cd + ls automático
+# cd + ls automático. Solo con terminal real: sin tty eza lee rutas de stdin y se cuelga (scripts, agentes)
+cd() {
+    builtin cd "$@" || return
+    [[ -t 0 && -t 1 ]] && eza --icons=always --color=always --group-directories-first
+    return 0
+}
 alias zconfig='nvim ~/.zshrc' gconfig='nvim ~/.config/ghostty/config'
 alias ...='../..' ....='../../..' .....='../../../..' ......='../../../../..'
 alias md='mkdir -p' rd=rmdir
