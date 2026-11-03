@@ -1,0 +1,107 @@
+config-version = 2
+
+# sketchybar y borders corren como brew services; aquí solo avisamos a la barra
+after-startup-command = ['exec-and-forget sketchybar --trigger aerospace_workspace_change']
+exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change']
+on-focus-changed = ['exec-and-forget sketchybar --trigger aerospace_workspace_change']
+
+start-at-login = true
+auto-reload-config = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = false
+persistent-workspaces = ["1", "2", "3", "4"]
+key-mapping.preset = 'qwerty'
+
+# Barra de 32pt = altura del notch; padding 10, gap 8 (como yabairc de Felix).
+# outer.top: built-in ya reserva 32pt (= barra) → 10; externos → 32 + 10 = 42
+gaps.inner.horizontal = 8
+gaps.inner.vertical   = 8
+gaps.outer.left       = 10
+gaps.outer.bottom     = 10
+gaps.outer.top        = [{ monitor."built-in" = 10 }, 42]
+gaps.outer.right      = 10
+
+[mode.main.binding]
+    alt-enter = 'exec-and-forget open -na Terminal'
+    alt-m = 'exec-and-forget sketchybar --bar hidden=toggle'  # ocultar/mostrar SketchyBar (menú macOS)
+
+    alt-slash = ['layout tiles horizontal vertical', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-comma = ['layout accordion horizontal vertical', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    alt-f = ['fullscreen', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    alt-minus = 'resize smart -50'
+    alt-equal = 'resize smart +50'
+
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
+    alt-9 = 'workspace 9'
+    alt-w = 'workspace W'
+
+    alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
+    alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
+    alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
+    alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
+    alt-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
+    alt-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
+    alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
+    alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
+    alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+    alt-shift-w = 'move-node-to-workspace --focus-follows-window W'
+
+    alt-tab = 'workspace-back-and-forth'
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+    alt-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main']
+    f = ['layout floating tiling', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_workspace_change']
+    backspace = ['close-all-windows-but-current', 'mode main']
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp'
+    run = 'move-node-to-workspace W'
+
+# Apps no gestionadas (manage=off en el yabairc de Felix) → flotantes
+[[on-window-detected]]
+    if.app-name-regex-substring = '^(LuLu|Vimac|Calculator|Calculadora|Software Update|Dictionary|Diccionario|VLC|System Preferences|System Settings|Ajustes del Sistema|zoom.us|Photo Booth|Archive Utility|Utilidad de Archivo|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Monitor de Actividad)$'
+    run = 'layout floating'
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    if.window-title-regex-substring = '(Co(py|nnect)|Move|Info|Pref|Copiar|Conectar|Mover|Información|Ajustes)'
+    run = 'layout floating'
+[[on-window-detected]]
+    if.app-id = 'com.apple.Safari'
+    if.window-title-regex-substring = '^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$'
+    run = 'layout floating'
+[[on-window-detected]]
+    if.app-name-regex-substring = '^(System Information|Información del Sistema)$'
+    if.window-title-regex-substring = '(About This Mac|Acerca de este Mac)'
+    run = 'layout floating'
