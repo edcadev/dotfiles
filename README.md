@@ -51,6 +51,7 @@ Replica la integración zsh de [Kaku](https://github.com/tw93/Kaku) sin depender
 - `auto_cd`, `auto_pushd`, `Shift+←/→` selecciona, `^U` borra hasta inicio de línea.
 - `ls`/`ll`/`la`/`lt2`/`lt3` con eza; `cd` lista el directorio al entrar. `zconfig`/`gconfig` editan `.zshrc`/Ghostty. Prompt: starship.
 - Alias: `...`, `md`, git (`g`, `gst`, `gco`, `gcb`, `gd`, `gds`, `glo`…). `y` abre yazi y hace cd al salir.
+- `git diff`/`log -p`/`show` con [delta](https://github.com/dandavison/delta) (configurado por `install.sh` en `~/.gitconfig`).
 
 ## Notas
 

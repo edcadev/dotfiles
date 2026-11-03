@@ -38,6 +38,12 @@ fi
 line="[ -f ~/dotfiles/zsh/sketchybar.zsh ] && source ~/dotfiles/zsh/sketchybar.zsh"
 grep -qxF "$line" "$HOME/.zshrc" 2>/dev/null || echo "$line" >> "$HOME/.zshrc"
 
+# 4c. git usa delta para diffs (git-delta en Brewfile)
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
+
 # 5. Ocultar barra de menús de macOS (SketchyBar la sustituye; alt-m la deja ver)
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
 killall SystemUIServer 2>/dev/null || true
