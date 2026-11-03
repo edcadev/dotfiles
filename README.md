@@ -29,6 +29,10 @@ Luego: dar permiso de Accesibilidad a AeroSpace y ejecutar `gh auth login`.
 
 Las configs en `~/.config` son symlinks a este repo: edita normal y haz commit.
 
+**Alcance:** aquí solo va el entorno (WM, barra, bordes, shell, prompt, estilos). Lo de desarrollo
+(fnm, PHP, pnpm, Android SDK…) va en `~/.zshrc`, que es local y no se versiona: tras formatear
+se instala a mano solo lo que haga falta.
+
 ## Atajos principales (AeroSpace)
 
 | Atajo                           | Acción                                                  |
