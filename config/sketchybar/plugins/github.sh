@@ -29,6 +29,8 @@ update() {
     IMPORTANT="$(echo "$title" | egrep -i "(deprecat|break|broke)")"
     COLOR=$BLUE
     PADDING=0
+    ICON=$GIT_INDICATOR                        # tipos sin case (Release, CheckSuite…)
+    URL="https://github.com/notifications"     # no heredar la URL de la notificación anterior
 
     if [ "${repo}" = "" ] && [ "${title}" = "" ]; then
       repo="Note"
@@ -65,7 +67,7 @@ update() {
 
     args+=(--clone github.notification.$COUNTER github.template \
            --set github.notification.$COUNTER "${notification[@]}")
-  done <<< "$(echo "$NOTIFICATIONS" | jq -r '.[] | [.repository.name, .subject.latest_comment_url, .subject.type, .subject.title] | @sh')"
+  done <<< "$(echo "$NOTIFICATIONS" | jq -r '.[] | [.repository.name, (.subject.latest_comment_url // .subject.url), .subject.type, .subject.title] | @sh')"
 
   sketchybar -m "${args[@]}" > /dev/null
 

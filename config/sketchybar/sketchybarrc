@@ -67,6 +67,5 @@ source "$ITEM_DIR/volume.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
-sketchybar --trigger aerospace_workspace_change
 
 echo "sketchybar configuration loaded.."
