@@ -45,11 +45,7 @@ git config --global delta.navigate true
 git config --global delta.syntax-theme 'Catppuccin Macchiato'
 git config --global merge.conflictStyle zdiff3
 
-# 5. Ocultar barra de menús de macOS (SketchyBar la sustituye; alt-m la deja ver)
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
-killall SystemUIServer 2>/dev/null || true
-
-# 6. Arrancar servicios
+# 5. Arrancar servicios
 brew services restart felixkratz/formulae/sketchybar
 brew services restart felixkratz/formulae/borders
 open -a AeroSpace

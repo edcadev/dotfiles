@@ -19,12 +19,13 @@ persistent-workspaces = ["1", "2", "3", "4"]
 key-mapping.preset = 'qwerty'
 
 # Barra de 32pt = altura del notch; padding 10, gap 8 (como yabairc de Felix).
-# outer.top: built-in ya reserva 32pt (= barra) → 10; externos → 32 + 10 = 42
+# outer.top: macOS reserva la franja del menú (built-in 32pt notch; externo 30pt con menú visible).
+# built-in → 10; externos → 32 (barra) + 10 - 30 (menú) = 12. Si ocultas el menú en externos, usa 42.
 gaps.inner.horizontal = 8
 gaps.inner.vertical   = 8
 gaps.outer.left       = 10
 gaps.outer.bottom     = 10
-gaps.outer.top        = [{ monitor."built-in" = 10 }, 42]
+gaps.outer.top        = [{ monitor."built-in" = 10 }, 12]
 gaps.outer.right      = 10
 
 [mode.main.binding]
