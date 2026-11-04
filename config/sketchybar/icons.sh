@@ -37,3 +37,6 @@ VOLUME_66=􀊧
 VOLUME_33=􀊥
 VOLUME_10=􀊡
 VOLUME_0=􀊣
+
+# Keyboard
+KEYBOARD=􀇳

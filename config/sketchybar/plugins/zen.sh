@@ -8,6 +8,7 @@ zen_on() {
              --set separator drawing=off \
              --set front_app drawing=off \
              --set volume_icon drawing=off \
+             --set input_source drawing=off \
              --set brew drawing=off
 }
 
@@ -19,6 +20,7 @@ zen_off() {
              --set front_app drawing=on \
              --set window_state drawing=on \
              --set volume_icon drawing=on \
+             --set input_source drawing=on \
              --set brew drawing=on
 }
 
