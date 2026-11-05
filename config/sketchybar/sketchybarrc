@@ -16,7 +16,7 @@ bar=(
   shadow=off # con topmost=on la sombra se pinta sobre las ventanas como franja borrosa
   position=top
   sticky=on
-  topmost=on  # macOS 27: MenuBarAgent (capa 25) capta clics en la franja superior; alt-m alterna barra
+  topmost=on  # macOS 27: MenuBarAgent (capa 25) capta clics en la franja superior; ctrl-alt-s alterna barra
   padding_right=10
   padding_left=10
   corner_radius=0

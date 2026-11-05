@@ -1,6 +1,6 @@
 #!/bin/bash
 # AeroSpace: workspaces fijos (ver aerospace.toml). Clic izquierdo = ir al workspace.
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "W")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "W" "M")
 
 sketchybar --add event aerospace_workspace_change
 

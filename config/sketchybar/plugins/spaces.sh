@@ -6,7 +6,7 @@ focused=$(aerospace list-workspaces --focused)
 windows=$(aerospace list-windows --all --format '%{workspace}|%{app-name}')
 
 args=()
-for sid in 1 2 3 4 5 6 7 8 9 W; do
+for sid in 1 2 3 4 5 6 7 8 9 W M; do
   icon_strip=" "
   while IFS='|' read -r ws app; do
     [ "$ws" = "$sid" ] || continue
