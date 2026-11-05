@@ -96,7 +96,6 @@ gaps.outer.right      = 10
     run = 'layout floating'
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
-    if.window-title-regex-substring = '(Co(py|nnect)|Move|Info|Pref|Copiar|Conectar|Mover|Información|Ajustes)'
     run = 'layout floating'
 [[on-window-detected]]
     if.app-id = 'com.apple.Safari'
