@@ -30,6 +30,19 @@ apple_lock=(
   click_script="pmset displaysleepnow; $POPUP_OFF"
 )
 
+apple_sleep=(
+  icon=$SLEEP
+  label="Sleep"
+  click_script="$POPUP_OFF; pmset sleepnow"
+)
+
+# Diálogo nativo de confirmación: evita apagar por un clic accidental
+apple_power=(
+  icon=$POWER
+  label="Shut Down"
+  click_script="$POPUP_OFF; osascript -e 'tell application \"loginwindow\" to «event aevtrsdn»'"
+)
+
 sketchybar --add item apple.logo left                  \
            --set apple.logo "${apple_logo[@]}"         \
                                                        \
@@ -40,4 +53,10 @@ sketchybar --add item apple.logo left                  \
            --set apple.activity "${apple_activity[@]}" \
                                                        \
            --add item apple.lock popup.apple.logo      \
-           --set apple.lock "${apple_lock[@]}"
+           --set apple.lock "${apple_lock[@]}"         \
+                                                       \
+           --add item apple.sleep popup.apple.logo     \
+           --set apple.sleep "${apple_sleep[@]}"       \
+                                                       \
+           --add item apple.power popup.apple.logo     \
+           --set apple.power "${apple_power[@]}"
