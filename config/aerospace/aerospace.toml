@@ -96,6 +96,15 @@ gaps.outer.right      = 10
     if.app-id = 'com.apple.Music'
     run = 'move-node-to-workspace M'
 
+[[on-window-detected]]
+    if.app-id = 'com.bitwarden.desktop'
+    run = 'layout floating'
+# Ventana emergente de la extensión de Bitwarden (título exacto para no afectar pestañas normales)
+[[on-window-detected]]
+    if.app-name-regex-substring = '^(Brave Browser|Google Chrome|Firefox)$'
+    if.window-title-regex-substring = '^Bitwarden$'
+    run = 'layout floating'
+
 # Apps no gestionadas (manage=off en el yabairc de Felix) → flotantes
 [[on-window-detected]]
     if.app-name-regex-substring = '^(LuLu|Vimac|Calculator|Calculadora|Software Update|Dictionary|Diccionario|VLC|System Preferences|System Settings|Ajustes del Sistema|zoom.us|Photo Booth|Archive Utility|Utilidad de Archivo|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Monitor de Actividad)$'
