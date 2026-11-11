@@ -99,10 +99,11 @@ gaps.outer.right      = 10
 [[on-window-detected]]
     if.app-id = 'com.bitwarden.desktop'
     run = 'layout floating'
-# Ventana emergente de la extensión de Bitwarden (título exacto para no afectar pestañas normales)
+# Ventana emergente de la extensión de Bitwarden: "Bitwarden" o "Bitwarden - <perfil>" (Chrome con
+# varios perfiles). Se excluyen las ventanas normales, que llevan "- Google Chrome" o "- Brave".
 [[on-window-detected]]
     if.app-name-regex-substring = '^(Brave Browser|Google Chrome|Firefox)$'
-    if.window-title-regex-substring = '^Bitwarden$'
+    if.window-title-regex-substring = '^Bitwarden( - (?!.*(Google Chrome|Brave)).*)?$'
     run = 'layout floating'
 
 # Apps no gestionadas (manage=off en el yabairc de Felix) → flotantes
